@@ -1,0 +1,28 @@
+@import "variables";
+
+.footer-container {
+  background-color: $primary-text-color;
+  color: $primary-color-text;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  .footer-brand-title {
+    font-size: $header-h2;
+  }
+  h6 {
+    font-size: $header-h2 - .5rem;
+  }
+  .author,
+  .footer-brand-title,
+  h6 {
+    margin: 10px 0;
+  }
+  .social-networks {
+    i {
+      margin: 0 10px;
+      font-size: $icons;
+    }
+  }
+}

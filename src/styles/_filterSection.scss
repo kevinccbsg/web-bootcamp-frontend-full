@@ -1,0 +1,11 @@
+
+.filter-section {
+  grid-area: filter;
+  .filter-list {
+    display: flex;
+    margin: 10px 0 0;
+    .filter-list-item {
+      margin-right: 10px;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@import "reset";
+@import "variables";
+@import "responsive";
+@import "commons";
+@import "navbar";
+@import "filterSection";
+@import "mainSection";
+@import "footer";
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  color: $primary-color-text;
+  text-decoration: none;
+}
+
+body {
+  background-color: $primary-color-text;
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+  min-height: 100vh;
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 10% 1fr 10%;
+  grid-template-rows: minmax(max-content, 50px) 1fr;
+  grid-template-areas: 
+    ". filter ."
+    ". main .";
+}
+
