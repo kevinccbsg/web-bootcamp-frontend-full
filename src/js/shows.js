@@ -1,5 +1,5 @@
 import striptags from 'striptags';
-import { openHeader, loadingRender } from './ui';
+import { openHeader, loadingRender, errorRender } from './ui';
 import img from './../images/default.jpg';
 
 const API_URL = 'http://api.tvmaze.com/';
@@ -20,6 +20,7 @@ const showsModule = () => {
       shows = shows.map(show => show.show ? show.show : show);
     } catch (e) {
       console.log('Error getting shows', e);
+      throw e;
     }
   };
 
@@ -88,6 +89,7 @@ const showsModule = () => {
       renderShows(showSection, shows);
     } catch (e) {
       console.log('Error', e);
+      errorRender('show-section', e);
     }
   };
 

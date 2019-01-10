@@ -3,7 +3,7 @@ import './styles/detail.scss';
 import img from './images/default.jpg';
 import './js/quoteForm';
 import quotesModule from './js/quotes';
-import { loadingRender } from './js/ui';
+import { loadingRender, errorRender } from './js/ui';
 
 const API_URL = 'http://api.tvmaze.com/';
 const SHOWS_URL = `${API_URL}shows`;
@@ -26,7 +26,7 @@ const detailTemplate = ({ id, name, summary, image }) => `
 const renderDetail = async () => {
   try {
     const id = window.location.search ? window.location.search.split('=')[1] : '';
-    loadingRender('detail').render();
+    loadingRender('detailSection').render();
     const response = await fetch(`${SHOWS_URL}/${id}`);
     const show = await response.json();
     const quotesResponse = await fetch(`${QUOTES_URL}/${id}`);
@@ -40,6 +40,7 @@ const renderDetail = async () => {
     detail.innerHTML = showTemplate;
   } catch (e) {
     console.log('Error', e);
+    errorRender('detailSection', e.message);
   }
 };
 

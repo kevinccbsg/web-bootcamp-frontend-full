@@ -30,7 +30,17 @@ const loadingRender = (id, className = 'loader') => {
   };
 };
 
+const errorRender = (id, error) => {
+  document.getElementById(id).innerHTML = `
+    <div class="error">
+      <h1>Something bad happened</h1>
+      <p>${error}</p>
+    </div>
+  `;
+};
+
 module.exports = {
   openHeader,
   loadingRender,
+  errorRender,
 };
