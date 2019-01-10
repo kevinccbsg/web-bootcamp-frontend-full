@@ -15,7 +15,7 @@ const detailTemplate = ({ id, name, summary, image }) => `
       <h1>${name}</h1>
     </div>
     <div class="image-container">
-      <img src="${image ? image.original : img}">
+      <img src="${image ? image.original.replace('http', 'https') : img}">
     </div>
   </header>
   <div class="content">

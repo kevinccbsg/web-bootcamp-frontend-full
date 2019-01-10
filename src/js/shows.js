@@ -52,7 +52,7 @@ const showsModule = () => {
       </header>
       <div class="card-content">
         <div class="card-content-image">
-          <img src="${image ? image.medium : img}">
+          <img src="${image ? image.medium.replace('http', 'https') : img}">
         </div>
         <div class="card-content-text">
           <p>${striptags(summary)}</p>
