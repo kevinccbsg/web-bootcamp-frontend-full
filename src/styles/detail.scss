@@ -28,6 +28,19 @@ main {
 }
 
 .detail-section {
+  .loader {
+    display: none;
+  }
+  &.loading {
+    .loader {
+      display: flex;
+    }
+    .detail-content,
+    .quote-form,
+    .quotes-list {
+      display: none;
+    }
+  }
   header {
     position: relative;
     margin: 0 auto;

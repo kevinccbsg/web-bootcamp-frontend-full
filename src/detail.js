@@ -26,7 +26,8 @@ const detailTemplate = ({ id, name, summary, image }) => `
 const renderDetail = async () => {
   try {
     const id = window.location.search ? window.location.search.split('=')[1] : '';
-    loadingRender('detailSection').render();
+    const detail = document.getElementById('detail');
+    document.getElementById('detailSection').classList.add('loading');
     const response = await fetch(`${SHOWS_URL}/${id}`);
     const show = await response.json();
     const quotesResponse = await fetch(`${QUOTES_URL}/${id}`);
@@ -35,7 +36,7 @@ const renderDetail = async () => {
       throw show;
     }
     quotesModule().renderQuotes(quotes);
-    const detail = document.getElementById('detail');
+    document.getElementById('detailSection').classList.remove('loading');
     const showTemplate = detailTemplate(show);
     detail.innerHTML = showTemplate;
   } catch (e) {
