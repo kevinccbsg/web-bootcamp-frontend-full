@@ -8,6 +8,7 @@
   color: $primary-color-dark;
   transition: all linear .3s;
   font-size: $primary-font-size;
+  cursor: pointer;
   &:hover {
     background-color: darken($primary-color-text, 20%);
   }
