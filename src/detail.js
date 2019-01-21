@@ -5,9 +5,9 @@ import './js/quoteForm';
 import quotesModule from './js/quotes';
 import { loadingRender, errorRender } from './js/ui';
 
-const API_URL = 'http://api.tvmaze.com/';
+const API_URL = 'https://api.tvmaze.com/';
 const SHOWS_URL = `${API_URL}shows`;
-const QUOTES_URL = 'http://localhost:3000/api/v1/quote';
+const QUOTES_URL = 'https://quotes-api-ecoitpillp.now.sh/api/v1/quote';
 
 const detailTemplate = ({ id, name, summary, image }) => `
   <header id="${id}">

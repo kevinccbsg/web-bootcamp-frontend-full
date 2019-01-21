@@ -6,7 +6,7 @@ const quoteInput = document.querySelector('#quote');
 
 const storage = storageModule();
 
-const QUOTES_URL = 'http://localhost:3000/api/v1/quote';
+const QUOTES_URL = 'https://quotes-api-ecoitpillp.now.sh/api/v1/quote';
 
 const quoteBar = (value = '') => {
   quoteInput.value = value;
